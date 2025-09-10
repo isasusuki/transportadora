@@ -1,0 +1,139 @@
+/* Paleta Brasil */
+:root {
+    --verde: #009739;
+    --amarelo: #fedf00;
+    --azul: #002776;
+    --branco: #ffffff;
+    --texto: #003366;
+    --fonte: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    font-family: var(--fonte);
+    background-color: #f0f8ff;
+    color: var(--texto);
+  }
+  
+  /* Cabeçalho com faixa verde e título destacado */
+  header {
+    background-color: var(--verde);
+    color: var(--branco);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    background-color: var(--verde);
+    color: var(--branco);
+    font-size: 32px;
+    margin: 0;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  header p {
+    margin-top: 8px;
+    font-size: 16px;
+  }
+  
+  /* Menu de navegação */
+  nav {
+    background-color: var(--amarelo);
+    padding: 10px;
+    text-align: center;
+  }
+  
+  nav a {
+    color: var(--azul);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav a:hover {
+    background-color: var(--verde);
+    color: var(--branco);
+  }
+  
+  /* Área principal */
+  main {
+    padding: 30px;
+    max-width: 600px;
+    margin: auto;
+    background-color: var(--branco);
+    border-radius: 10px;
+    border: 4px solid;
+    border-image: linear-gradient(to right, var(--verde), var(--amarelo), var(--azul)) 1;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  /* Título interno */
+  main h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--azul);
+  }
+  
+  /* Campo de rastreamento */
+  input[type="text"] {
+    width: 80%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid var(--verde);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus {
+    border-color: var(--azul);
+  }
+  
+  /* Botão de consulta */
+  button {
+    background-color: var(--verde);
+    color: var(--branco);
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--azul);
+    color: var(--amarelo);
+  }
+  
+  /* Rodapé */
+  footer {
+    background-color: var(--azul);
+    color: var(--branco);
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 40px;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 600px) {
+    input[type="text"] {
+      width: 100%;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  

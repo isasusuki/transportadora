@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa de Atuação - Viatex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  const map = L.map('map').setView([-15.78, -47.93], 4); // Centro do Brasil
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+
+  const estados = [
+    { nome: "Paraná", lat: -24.7, lon: -51.9 },
+    { nome: "São Paulo", lat: -23.5, lon: -46.6 },
+    { nome: "Bahia", lat: -12.9, lon: -38.5 },
+    { nome: "Minas Gerais", lat: -19.9, lon: -43.9 },
+    { nome: "Rio de Janeiro", lat: -22.9, lon: -43.2 },
+    { nome: "Rio Grande do Sul", lat: -30.0, lon: -51.2 },
+    { nome: "Santa Catarina", lat: -27.6, lon: -48.5 },
+    { nome: "Pernambuco", lat: -8.0, lon: -34.9 },
+    { nome: "Amazonas", lat: -3.1, lon: -60.0 },
+    { nome: "Distrito Federal", lat: -15.8, lon: -47.9 }
+  ];
+
+  estados.forEach(e => {
+    L.circleMarker([e.lat, e.lon], {
+      radius: 10,
+      color: "#003366",
+      fillColor: "#3399ff",
+      fillOpacity: 0.8
+    }).addTo(map).on('click', () => {
+      const url = `estado.html?nome=${encodeURIComponent(e.nome)}`;
+      window.location.href = url;
+    });
+  });
+</script>
+
+</body>
+</html>
