@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Viatex em Estado</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; text-align: center; }
+    h1 { color: #003366; }
+    img { max-width: 500px; width: 100%; margin-top: 20px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+
+<h1 id="titulo">Viatex em [Estado]</h1>
+<p>A Viatex atua com excelência no estado selecionado, oferecendo transporte seguro e eficiente.</p>
+<img src="transportadora.png" alt="Foto da Viatex">
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const estado = params.get("nome");
+  if (estado) {
+    document.getElementById("titulo").textContent = `Viatex em ${estado}`;
+  }
+</script>
+
+</body>
+</html>
